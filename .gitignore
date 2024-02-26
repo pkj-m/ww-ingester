@@ -1,4 +1,4 @@
 env
-config-local.ini
+.env
 .idea
 __pycache__/
