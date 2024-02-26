@@ -1,8 +1,16 @@
 from configparser import ConfigParser
+import configparser, os
+
+
+class EnvInterpolation(configparser.BasicInterpolation):
+    """Interpolation which expands environment variables in values."""
+
+    def before_get(self, parser, section, option, value, defaults):
+        return os.path.expandvars(value)
 
 
 def load_config(filename='database.ini', section='postgresql'):
-    parser = ConfigParser()
+    parser = ConfigParser(interpolation=EnvInterpolation())
     parser.read(filename)
 
     config = {}

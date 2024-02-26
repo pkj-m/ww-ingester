@@ -1,4 +1,4 @@
 env
-database.ini
+config-local.ini
 .idea
 __pycache__/

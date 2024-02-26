@@ -1,6 +1,5 @@
 import psycopg2
 from config import load_config
-import asyncio
 
 
 def connect(config):

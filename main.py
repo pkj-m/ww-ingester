@@ -1,11 +1,7 @@
 from __future__ import annotations
 from fastapi import Request, FastAPI
 from database import write_event
-import uvicorn
-from multiprocessing import Process
-import json
-
-process_pool: list[Process] = []
+import uvicorn, json
 
 app = FastAPI()
 
